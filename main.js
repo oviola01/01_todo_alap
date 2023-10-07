@@ -1,8 +1,8 @@
-import { TODOLIST } from "./adatok.js";
+import { TODOLIST2 } from "./adatok.js";
 import TodoView from "./Megjelenit.js";
 
 $(function(){
     const WHERE=$(".tarolo");
-    new TodoView(TODOLIST,WHERE);
+    new TodoView(TODOLIST2,WHERE);
     }
 )

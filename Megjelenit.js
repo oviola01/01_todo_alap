@@ -1,21 +1,21 @@
+import MegjelSor from "./MegjelSor.js";
+
 class TodoView{
+    #myLIST=[];
     constructor(LIST, szulo){
-        this.toView=LIST;
-        this.where=szulo;
-        let content = this.letItViewed();
-        this.where.html(content);
+        this.#myLIST=LIST;
+        szulo.append(`<table class="tablestyle">`)
+        this.tableElem=szulo.children("table"); //szülőelemben lévő táblázatokat adja vissza
+        this.letItViewed();
     }
 
     letItViewed(){
-        let myText="<table>"
-        for(let i=0; i<this.toView.length; i++){
-            myText+=`<td>`;
-            myText+=`<tr>${this.toView[i]}</tr>`;
-            myText+=`</td>`;
+        let myText=""
+        for(let i=0; i<this.#myLIST.length; i++){
+            new MegjelSor(this.#myLIST[i],this.tableElem);
         }
-        myText+="</table>"
     }
-
+    
 
 }
 
